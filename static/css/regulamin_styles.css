@@ -1,0 +1,159 @@
+*{
+    font-family: sans-serif;
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+body{
+    background-color: white;
+    overflow-x: hidden;
+}
+header{
+    background-color: rgba(0, 0, 0, 0.5);
+    color: black;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky; top: 0px;
+    z-index: 1000;
+    padding-left: 100px;
+}
+header h1{
+    margin-left: 30px;
+}
+#menu{
+    display: flex;
+    position: absolute; left: 1000px; top: 40px;
+    gap: 20px;
+    list-style-type: none;
+}
+#btntext{
+    display: none;
+}
+#menu a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px 20px 10px 20px;
+    transition: 0.5s;
+    border-radius: 25px;
+
+}
+#menu a:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: 0.5s;
+}
+
+#szukaj {
+    width: 0px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0px 20px;
+    border-radius: 25px;
+    color: white;
+    font-size: 16px;
+    opacity: 0; 
+    transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+#szukaj:focus, #szukaj:hover {
+    border: none;
+    outline: none;
+    padding-left: 40px;
+}
+
+.input-box {
+    position: absolute; left: 400px;
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 25px;
+}
+
+.input-box i {
+    position: absolute; left: 15px;
+    color: white;
+    cursor: pointer;
+}
+
+.input-box:focus-within, .input-box:hover #szukaj {
+    width: 300px;
+    opacity: 1;
+}
+
+#prof{
+    height: 100px;
+    background-color: blue;
+}
+
+#button1 {
+    background-color: rgb(255, 255, 255);
+    width: 40px;
+    height: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+    margin-right: 30px;
+}
+
+#btn1{
+    background-color: black;
+    height: 20px;
+    width: 20px;
+    border-radius: 10px;
+}
+
+#nag{
+    opacity: 0;
+    transition: 1s ease-in;
+}
+
+main{
+    text-align: center;
+    line-height: 30px;
+}
+
+#stopka{
+    clear: both;
+    width: 100%;
+    height: 250px;
+    background-color: rgba(75, 75, 75, 0.5);
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    gap: 500px;
+}
+#kontakt{
+    text-align: center;
+    justify-content: center;
+    text-align: left;
+    line-height: 30px;
+}
+#kontakt a{
+    color: black;
+}
+#social-media{
+    display: table-column;
+    text-align: center;
+    justify-content: center;
+    line-height: 50px;
+}
+#social-media ul{
+    list-style: none;
+}
+#social-media a{
+    color: black;
+}
+#prawa{
+    text-align: right;
+    justify-content: center;
+    line-height: 30px;
+}
+#prawa a{
+    color: black;
+}

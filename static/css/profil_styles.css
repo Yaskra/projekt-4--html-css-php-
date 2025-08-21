@@ -1,0 +1,472 @@
+*{
+    font-family: sans-serif;
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+html {
+    width: 100%;
+    margin: 0;
+    overflow-x: hidden;
+    padding: 0;
+}
+body{
+    background-color: rgb(36, 36, 36);
+    overflow-x: hidden;
+    overflow: hidden;
+}
+header {
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 10px 10px rgb(20, 172, 0);
+    color: black;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky; top: 0px;
+    z-index: 1000;
+    padding-left: 100px;
+}
+header h1{
+    margin-left: 30px;
+}
+#hamburger {
+    display: none; /* Ukrywa hamburger na większych ekranach */
+}
+#menu{
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+#btntext{
+    display: none;
+}
+#menu li {
+    padding: 10px;
+}
+#menu a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px 20px 10px 20px;
+    transition: 0.5s;
+    border-radius: 25px;
+
+}
+#menu a:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: 0.5s;
+}
+#szukaj {
+    width: 0px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0px 20px;
+    border-radius: 25px;
+    color: white;
+    font-size: 16px;
+    opacity: 0; 
+    transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+#szukaj:focus, #szukaj:hover {
+    border: none;
+    outline: none;
+    padding-left: 40px;
+}
+
+.input-box {
+    position: absolute; left: 400px;
+    display: flex;
+    align-items: center;
+    border: 1px solid white;
+    border-radius: 25px;
+}
+
+.input-box i {
+    position: absolute; left: 15px;
+    color: white;
+    cursor: pointer;
+}
+
+.input-box:focus-within, .input-box:hover #szukaj {
+    width: 300px;
+    opacity: 1;
+}
+
+#prof{
+    height: 100px;
+    background-color: blue;
+}
+
+#button1 {
+    background-color: rgb(255, 255, 255);
+    width: 40px;
+    height: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+    margin-right: 30px;
+}
+
+#btn1{
+    background-color: black;
+    height: 20px;
+    width: 20px;
+    border-radius: 10px;
+}
+
+#nag{
+    opacity: 0;
+    transition: 1s ease-in;
+}
+main{
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+#tabela {
+    position: relative;
+    z-index: 1000; /* Wyższy niż bąbelki */
+    background-color: rgb(36, 36, 36);
+    width: 70%;
+    height: 550px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 2px solid rgb(20, 172, 0);
+    color: white;
+    opacity: 0;
+    transition: 1s;
+}
+#title{
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgb(20, 172, 0);
+    width: 100%;
+    text-align: center;
+}
+#profstyle{
+    position: relative; left: -10px;
+    width: 250px;
+    height: 90%;
+    float: left;
+}
+#style li{
+    border-bottom: 2px solid rgb(20, 172, 0);
+    border-right: 2px solid rgb(20, 172, 0);
+    border-left: 2px solid rgb(20, 172, 0);
+    border-top: 2px solid rgb(20, 172, 0);
+    height: 50px;
+    justify-content: center;
+    text-align: center;
+    padding-top: 13px;
+    font-size: larger;
+    list-style-type: none;
+    display: block;
+    font-weight: bold;
+    margin: 10px;
+    z-index: 100;
+}
+#style li:hover{
+    transform: translateX(10px);
+}
+
+.profstyles{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#logout{
+    background-color: red;
+    z-index: 101;
+}
+#logout a{
+    color: white;
+    text-decoration: none;
+}
+#information{
+    border: 2px solid rgb(20, 172, 0);
+    width: 80%;
+    height: 88%;
+    margin-top: 10px;
+    float: right;
+    padding: 20px;
+}
+.titleinf{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#ogolne{
+    display: block;
+}
+
+#kontakt{
+    display: none;
+}
+#kontakt a{
+    color: white;
+}
+
+#ustawienia{
+    display: none;
+}
+#ustawieniainput{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    position: relative;
+}
+
+#ustawieniainput div{
+    align-items: center;
+    text-align: center;
+}
+
+.inputaktualizacje{
+    outline: none;
+    border: 2px solid rgb(20, 172, 0);
+    background-color: rgba(0, 0, 0, 0.2);
+    font-size: large;
+    width: 250px;
+    height: 50px;
+    margin-bottom: 20px;
+    border-radius: 25px;
+    padding-left: 20px;
+}
+.btnchange{
+    outline: none;
+    border: 2px solid rgb(20, 172, 0);
+    background-color: rgba(0, 0, 0, 0.2);
+    font-size: large;
+    width: 150px;
+    height: 40px;
+    font-weight: bold;
+    color: white;
+    border-radius: 25px;
+    transition: 0.5s;
+}
+.btnchange:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+#zamowienia{
+    display: none;
+}
+
+#mojeopinie{
+    display: none;
+}
+
+#stopka{
+    clear: both;
+    width: 100%;
+    height: 180px;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 10px 10px rgb(20, 172, 0);
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    gap: 500px;
+    position: relative;
+    z-index: 1001;
+    color: white;
+}
+#kontaktfooter{
+    text-align: center;
+    justify-content: center;
+    text-align: left;
+    line-height: 30px;
+}
+#kontaktfooter a{
+    color: white;
+}
+#social-media{
+    display: table-column;
+    text-align: center;
+    justify-content: center;
+    line-height: 50px;
+}
+#social-media ul{
+    list-style: none;
+}
+#social-media a{
+    color: white;
+}
+#prawa{
+    text-align: right;
+    justify-content: center;
+    line-height: 30px;
+}
+#prawa a{
+    color: white;
+}
+
+#backbubble {
+    position: relative; /* żeby można było pozycjonować wewnętrzne elementy */
+    z-index: 1; /* niższy niż tabela */
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+.bubble {
+    position: absolute;
+    bottom: 0px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    animation: floatUp linear infinite;
+    z-index: 1;
+}
+.icons{
+    display: none;
+}
+
+
+@media (min-width: 360px) and (max-width: 480px) {
+    body {
+        background-color: rgb(36, 36, 36);
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 1000; /* Zapewnia, że nagłówek będzie na wierzchu */
+        background-color: rgb(36, 36, 36); /* Dodaj kolor tła, aby upewnić się, że nagłówek jest widoczny */
+        padding-left: 20px;
+    }
+    #nag{
+        position: sticky; top: 0;
+    }
+
+    #hamburger {
+        display: block;
+        cursor: pointer;
+        width: 30px;
+        height: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-right: 30px;
+    }
+
+    #hamburger div {
+        width: 30px;
+        height: 5px;
+        background-color: white;
+    }
+
+    /* Ukrycie menu po załadowaniu strony */
+    #menu {
+        display: block;
+        position: absolute;
+        top: 100px;
+        right: 0;
+        background-color: rgba(75, 75, 75);
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+        width: 100%;
+        height: 100vh;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        border: 2px solid rgb(20, 172, 0);
+        transform: translateX(481px);
+        transition: 1s;
+        float: right;
+        gap: 20px;
+    }
+
+    #menu.show {
+        display: block;
+        transform: translateX(0px);
+        transition: 1s;
+        overflow: hidden;
+    }
+
+    #menu li {
+        text-align: center;
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+    }
+
+    #menu div {
+        display: none;
+    }
+
+    /* Styl dla aktywnego elementu w menu */
+    #menu a {
+        text-decoration: none;
+        color: white;
+        border: 2px solid rgb(20, 172, 0);
+        min-width: 100%;
+        display: block;
+    }
+
+    #hamburger.active + #menu {
+        display: block;
+    }
+
+    /* Główna strona */
+    #tabela{
+        width: 100%;
+        height: 70%;
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+    #profstyle{
+        width: 20%;
+        gap: 0px;
+    }
+    #style {
+        list-style-type: none;
+        padding: 0;
+    }
+    #style li a{
+        display: none;
+    }
+    .icons{
+        display: block;
+    }
+    
+    /* Stopka */
+    #stopka{
+        clear: both;
+        width: 100%;
+        height: auto;
+        background-color: rgb(36, 36, 36);
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        color: white;
+    }
+    #prawa{
+        text-align: center;
+    }
+    #kontakt{
+        text-align: center;
+    }
+}

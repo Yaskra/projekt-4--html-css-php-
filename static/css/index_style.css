@@ -1,0 +1,1889 @@
+*{
+    font-family: sans-serif;
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+html {
+    width: 100%;
+    margin: 0;
+    overflow-x: hidden;
+    padding: 0;
+}
+body{
+    background-color: rgb(36, 36, 36);
+    overflow-x: hidden;
+    overflow: hidden;
+}
+header {
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 10px 10px rgb(20, 172, 0);
+    color: black;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-left: 100px;
+    z-index: 1000;
+}
+#logo{
+    width: 100px;
+    height: 100%;
+    background-image: url(/static/png/icons/icon_1.webp);
+}
+#logo img {
+    transition: 1s;
+}
+header h1{
+    margin-left: 30px;
+}
+#hamburger {
+    display: none; /* Ukrywa hamburger na większych ekranach */
+}
+
+#menu {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#menu li {
+    padding: 10px;
+}
+
+#btntext{
+    display: none;
+}
+#menu a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px 20px 10px 20px;
+    transition: 0.5s;
+    border-radius: 25px;
+
+}
+#menu a:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: 0.5s;
+}
+
+#szukaj {
+    width: 0px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0px 20px;
+    border-radius: 25px;
+    color: white;
+    font-size: 16px;
+    opacity: 0; 
+    transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+#szukaj:focus, #szukaj:hover {
+    border: none;
+    outline: none;
+    padding-left: 40px;
+}
+
+.input-box {
+    position: absolute; left: 400px;
+    display: flex;
+    align-items: center;
+    border: 1px solid white;
+    border-radius: 25px;
+}
+
+.input-box i {
+    position: absolute; left: 15px;
+    color: white;
+    cursor: pointer;
+}
+
+.input-box:focus-within, .input-box:hover #szukaj {
+    width: 300px;
+    opacity: 1;
+}
+
+#prof{
+    height: 100px;
+    background-color: blue;
+}
+
+#button1 {
+    background-color: rgb(255, 255, 255);
+    width: 40px;
+    height: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+    margin-right: 30px;
+}
+
+#btn1{
+    background-color: black;
+    height: 20px;
+    width: 20px;
+    border-radius: 10px;
+}
+
+#nag{
+    opacity: 0;
+    transition: 1s ease-in;
+}
+
+main{
+    justify-content: center;
+    align-items: center;
+}
+
+#welcome{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    float: left;
+    justify-content: center;
+    width: 100%;
+    height: 720px;
+    background-image: url(/static/png/background-images/bg_welcome.webp);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    transition: 1s ease-in;
+}
+#blur{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+#welcometekst{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    float: left;
+    justify-content: center;
+    height: 100%;
+    width: 100%
+}
+#blur h1{
+    color: white;
+}
+#button2 {
+    width: 150px;
+    height: 50px;
+    background-color: transparent;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: 1px solid white;
+    border-radius: 20px;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+#button2:hover{
+    transform: scale(1.05);
+}
+
+#button2 a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: inherit;
+    text-decoration: none;
+    text-align: center;
+    line-height: 48px;
+}
+#slider-wrapper {
+    display: flex;
+    width: 500%;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.5s ease-in-out;
+}
+.sliding-box {
+    flex: 0 0 20%;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Nawigacja w sliderze */
+.slider-nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Kropki nawigacyjne */
+.slider-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.slider-dot.active {
+    background-color: #333;
+}
+
+#kbok{
+    width: 500%;
+    height: 700px;
+    padding-right: 140px;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+.kbok-hidden-mobile {
+    opacity: 0;
+    transform: translateX(0px);
+    transition: 1s ease-in-out;
+}
+
+.kbok-visible-mobile {
+    opacity: 1;
+    transform: translateY(0);
+    transition: 1s ease-in-out;
+}
+#bloki{
+    width: 100vw;
+    height: 700px;
+    background-color: rgba(75, 75, 75, 0.5);
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    opacity: 0;
+    transition: 1s ease-in;
+    text-align: center;
+    perspective: 1000px; /* Głębia efektu */
+}
+
+.nao{
+    width: 100%;
+    height: 100px;
+    justify-content: center;
+    padding-top: 30px;
+    display: flex;
+    font-weight: bold;
+    background-color: rgb(36, 36, 36);
+    color: white;
+    opacity: 0;
+    transition: 1s ease-in;
+}
+
+
+#blok1, #blok2, #blok3, #blok4, #blok5 {
+    width: 350px;
+    height: 80%;
+    display: flex;
+    float: left;
+    margin-top: 80px;
+    margin-left: 45px;
+    border: 2px solid rgb(20, 172, 0);
+    background-color: rgb(36, 36, 36);
+    padding: 20px;
+    color: white;
+    position: relative;
+    transform: perspective(800px) rotateY(-50deg) translateX(-50px); /* Dodana perspektywa */
+    transform-origin: center;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    transition: transform 0.5s, margin-left 0.5s;
+}
+
+#blok1:hover, #blok2:hover, #blok3:hover, #blok4:hover, #blok5:hover {
+    transform: perspective(800px) rotateY(0deg) scale(1.15);
+    margin-left: -30px;
+    transition: transform 0.5s, margin-left 0.5s;
+}
+
+
+
+#blok1 {
+    width: 350px;
+    height: 80%;
+    float: left;
+    margin-top: 70px;
+    margin-left: 150px;
+    border: 2px solid rgb(20, 172, 0);
+    background-color: rgb(36, 36, 36);
+    padding: 20px;
+    color: white;
+    z-index: 40;
+    position: relative;
+    display: block;
+}
+
+#blok2 {
+    width: 350px;
+    height: 80%;
+    float: left;
+    margin-top: 70px;
+    margin-left: -150px; /* Przesunięcie na lewo, aby nachodziło */
+    border: 2px solid rgb(20, 172, 0);
+    background-color: rgb(36, 36, 36);
+    padding: 20px;
+    color: white;
+    z-index: 35; /* Wyższy z-index, aby było nad #blok1 */
+    position: relative;
+}
+
+#blok3 {
+    width: 350px;
+    height: 80%;
+    float: left;
+    margin-top: 70px;
+    margin-left: -150px;
+    border: 2px solid rgb(20, 172, 0);
+    background-color: rgb(36, 36, 36);
+    padding: 20px;
+    color: white;
+    z-index: 30; /* Jeszcze wyżej */
+    position: relative;
+}
+
+#blok4 {
+    width: 350px;
+    height: 80%;
+    float: left;
+    margin-top: 70px;
+    margin-left: -150px;
+    border: 2px solid rgb(20, 172, 0);
+    background-color: rgb(36, 36, 36);
+    padding: 20px;
+    color: white;
+    z-index: 25; /* Najwyższy */
+    position: relative;
+}
+#blok5 {
+    width: 350px;
+    height: 80%;
+    float: left;
+    margin-top: 70px;
+    margin-left: -150px;
+    border: 2px solid rgb(20, 172, 0);
+    background-color: rgb(36, 36, 36);
+    padding: 20px;
+    color: white;
+    z-index: 20; /* Najwyższy */
+    position: relative;
+}
+
+
+
+.cena{
+    width: 100%;
+    height: 100px;
+    align-items: center;
+    text-align: center;
+}
+
+
+.slider, .feedback {
+    opacity: 1;
+    transform: translateY(50px);
+    transition: 0.6s ease-out, 0.6s ease-out;
+}
+
+.widoczne {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#dmbg{
+    background-color: rgba(75, 75, 75, 0.5);
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    color: white;
+}
+
+#dm {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    color: white;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+#dm.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+#dm.hidden {
+    opacity: 0;
+    transform: translateX(500px);
+}
+
+#dmmain {
+    width: 100%;
+    line-height: 25px;
+}
+
+#dm h1 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+#content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Odstęp między zdjęciem a tekstem */
+    gap: 95px; /* Odstęp między obrazkiem a tekstem */
+}
+
+#dmmain #zdj {
+    flex-shrink: 0; /* Zapobiega zmniejszaniu obrazu */
+    transform: translateY(-55px) translateX(35px);
+    background-image: url(/static/png/images/dm_image.webp);
+    background-size: cover;
+    background-position: center;
+    width: 450px;
+    height: 300px;
+}
+
+#dm p {
+    width: 100%; /* Ograniczenie szerokości tekstu */
+    text-align: left;
+    transform: translateY(-45px);
+}
+
+h3 {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+
+
+#opinie {
+    height: 450px;
+    display: flex;
+    overflow: hidden; /* Ukrywa elementy wychodzące poza kontener */
+    align-items: center;
+    background-color: rgba(75, 75, 75, 0.5);
+    position: relative;
+    white-space: nowrap;
+}
+#wpisy{
+    width: 100%;
+    height: 100%;
+    position: absolute; top: 40px;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+#wpisy.widoczne{
+    opacity: 1;
+}
+#opinia{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+#answer{
+    display: block;
+    background-color: transparent;
+    outline: none;
+    border: 2px solid rgb(20, 172, 0);
+    border-radius: 50px;
+    width: 40%;
+    height: 50px;
+    margin-bottom: 50px;
+    padding-left: 50px;
+    font-size: large;
+    transition: 1s;
+}
+#answer:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: 1s;
+}
+#wyslij{
+    width: 100px;
+    height: 50px;
+    outline: none;
+    background-color: transparent;
+    display: block;
+    margin-bottom: 50px;
+    border-radius: 25px;
+    border: 2px solid rgb(20, 172, 0);
+    font-size: large;
+    color: white;
+    font-weight: bold;
+    transition: 1s;
+}
+#wyslij:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: 1s;
+}
+
+.slider {
+    margin-top: 70px;
+    display: flex;
+    gap: 20px;
+    width: max-content; /* Szerokość zależna od liczby elementów */
+    animation: przesuwanie 20s linear infinite;
+}
+
+@keyframes przesuwanie {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); } /* Przesuwa dokładnie o połowę, po czym zaczyna od nowa */
+}
+
+.feedback {
+    width: 300px;
+    height: 250px;
+    border: 2px solid rgb(20, 172, 0);
+    border-radius: 20px;
+    padding: 20px;
+    background-color: rgb(36, 36, 36);
+    color: white;
+    flex-shrink: 0; /* Zapobiega zmniejszaniu elementów */
+    margin-top: 80px;
+}
+
+.feedback1 {
+    width: 300px;
+    height: 250px;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: transparent;
+    flex-shrink: 0; /* Zapobiega skalowaniu elementów */
+}
+
+
+#stopka{
+    clear: both;
+    width: 100%;
+    height: 250px;
+    background-color: rgb(36, 36, 36);
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    gap: 500px;
+    color: white;
+}
+#kontakt{
+    text-align: center;
+    justify-content: center;
+    text-align: left;
+    line-height: 30px;
+    color: white;
+}
+#kontakt a{
+    color: white;
+}
+#social-media{
+    display: table-column;
+    text-align: center;
+    justify-content: center;
+    line-height: 50px;color: white;
+}
+#social-media ul{
+    list-style: none;
+}
+#social-media a{
+    color: white;
+}
+#prawa{
+    text-align: right;
+    justify-content: center;
+    line-height: 30px;
+}
+#prawa a{
+    color: white;
+}
+
+
+@media (max-width: 359px){
+    body {
+        background-color: rgb(36, 36, 36);
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000; /* Zapewnia, że nagłówek będzie na wierzchu */
+        background-color: rgb(36, 36, 36); /* Dodaj kolor tła, aby upewnić się, że nagłówek jest widoczny */
+        padding-left: 10px;
+    }
+    #nag{
+        position: fixed; top: 0;
+    }
+
+    #hamburger {
+        display: block;
+        cursor: pointer;
+        width: 30px;
+        height: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-right: 30px;
+    }
+
+    #hamburger div {
+        width: 30px;
+        height: 5px;
+        background-color: white;
+    }
+
+    /* Ukrycie menu po załadowaniu strony */
+    #menu {
+        display: block;
+        position: absolute;
+        top: 100px;
+        right: 0;
+        background-color: rgba(75, 75, 75);
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+        width: 100%;
+        height: 100vh;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        border: 2px solid rgb(20, 172, 0);
+        transform: translateX(500px);
+        transition: 1s;
+        float: right;
+    }
+
+    #menu.show {
+        display: block;
+        transform: translateX(0px);
+        transition: 1s;
+        overflow: hidden;
+    }
+
+    #menu li {
+        text-align: center;
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+    }
+
+    #menu div {
+        display: none;
+    }
+
+    /* Styl dla aktywnego elementu w menu */
+    #menu a {
+        text-decoration: none;
+        color: white;
+        border: 2px solid rgb(20, 172, 0);
+        min-width: 100%;
+        display: block;
+    }
+
+    #hamburger.active + #menu {
+        display: block;
+    }
+
+
+    /*nasza oferta*/
+    #bloki {
+        display: block;
+        flex-direction: row; /* Bloki ustawione obok siebie */
+        overflow-x: scroll;
+        width: 100%;
+        height: 650px;
+        flex: 0 0 100%; /* Każdy blok zajmuje pełną szerokość */
+    }
+    #kbok{
+        flex-direction: row;
+        justify-content: left;
+        width: 100%;
+        height: 700px;
+        display: flex;
+        padding-top: 60px;
+        padding-right: 0px;
+        flex: 0 0 100%; /* Każdy blok zajmuje pełną szerokość */
+        }
+    .kbok-hidden-mobile {
+    opacity: 0;
+    transform: translateX(0px);
+    transition: 1s ease-in-out;
+    }
+
+    .kbok-visible-mobile {
+        opacity: 1;
+        transform: translateY(0);
+        transition: 1s ease-in-out;
+    }
+        #bloki::-webkit-scrollbar {
+            height: 8px; /* Wysokość paska przewijania */
+          }
+          
+          #bloki::-webkit-scrollbar-thumb {
+            background-color: rgb(20, 172, 0); /* Kolor uchwytu paska przewijania */
+            border-radius: 10px; /* Zaokrąglenie uchwytu */
+          }
+          
+          #bloki::-webkit-scrollbar-track {
+            background-color: #f1f1f1; /* Kolor tła paska przewijania */
+            border-radius: 10px; /* Zaokrąglenie tła paska */
+          }
+          
+          #bloki::-webkit-scrollbar-button {
+            display: none; /* Ukrywa przyciski przewijania */
+          }
+
+    #blok1, #blok2, #blok3, #blok4, #blok5 {
+        display: block;
+        flex: 0 0 100%; /* Każdy blok zajmuje pełną szerokość */
+        width: 100vw; /* Szerokość bloku na pełny ekran */
+        transform: perspective(0px) rotateY(0deg) translateX(0px);
+        margin: 0px;
+    }
+    #blok1:hover, #blok2:hover, #blok3:hover, #blok4:hover, #blok5:hover {
+        display: flex;
+        flex: 0 0 100%; /* Każdy blok zajmuje pełną szerokość */
+        width: 100vw; /* Szerokość bloku na pełny ekran */
+        transform: perspective(0px) rotateY(0deg) translateX(0px);
+        margin: 0px;
+    }
+
+    /*Dlaczego my*/
+    #dmbg {
+        background-color: rgba(75, 75, 75, 0.5);
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        color: white;
+    }
+
+    #dm {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        color: white;
+        opacity: 0;
+        transform: translateY(0px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    #dm.visible {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+
+    #dm.hidden {
+        opacity: 0;
+        transform: translateX(0px);
+    }
+
+    #content {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+    }
+    #content p{
+        margin-top: 35px;
+    }
+    #zdj{
+        display: none;
+    }
+
+    /*opinie*/
+    #opinie {
+        height: 590px;
+        display: flex;
+        overflow: hidden; /* Ukrywa elementy wychodzące poza kontener */
+        align-items: center;
+        background-color: rgba(75, 75, 75, 0.5);
+        position: relative;
+        white-space: nowrap;
+    }
+    #opinia{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: absolute; bottom: 340px;
+        
+    }
+    #answer{
+        width: 100%;
+        height: 100px;
+        margin-bottom: 0px;
+        margin-top: 0px;
+    }
+    #wyslij{
+        margin-bottom: 100px;
+    }
+    #stopka{
+        clear: both;
+        width: 100%;
+        height: auto;
+        background-color: rgb(36, 36, 36);
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        color: white;
+    }
+    #prawa{
+        text-align: center;
+    }
+    #kontakt{
+        text-align: center;
+    }
+}
+
+/* Srednie Telefony */
+@media (min-width: 360px) and (max-width: 480px) {
+    body {
+        background-color: rgb(36, 36, 36);
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000; /* Zapewnia, że nagłówek będzie na wierzchu */
+        background-color: rgb(36, 36, 36); /* Dodaj kolor tła, aby upewnić się, że nagłówek jest widoczny */
+        padding-left: 20px;
+    }
+    #nag{
+        position: fixed; top: 0;
+    }
+
+    #hamburger {
+        display: block;
+        cursor: pointer;
+        width: 30px;
+        height: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-right: 30px;
+    }
+
+    #hamburger div {
+        width: 30px;
+        height: 5px;
+        background-color: white;
+    }
+
+    /* Ukrycie menu po załadowaniu strony */
+    #menu {
+        display: block;
+        position: absolute;
+        top: 100px;
+        right: 0;
+        background-color: rgba(75, 75, 75);
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+        width: 100%;
+        height: 100vh;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        border: 2px solid rgb(20, 172, 0);
+        transform: translateX(500px);
+        transition: 1s;
+        float: right;
+    }
+
+    #menu.show {
+        display: block;
+        transform: translateX(0px);
+        transition: 1s;
+        overflow: hidden;
+    }
+
+    #menu li {
+        text-align: center;
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+    }
+
+    #menu div {
+        display: none;
+    }
+
+    /* Styl dla aktywnego elementu w menu */
+    #menu a {
+        text-decoration: none;
+        color: white;
+        border: 2px solid rgb(20, 172, 0);
+        min-width: 100%;
+        display: block;
+    }
+
+    #hamburger.active + #menu {
+        display: block;
+    }
+
+
+    /*nasza oferta*/
+    #bloki {
+        display: block;
+        flex-direction: row; /* Bloki ustawione obok siebie */
+        overflow-x: scroll;
+        width: 100%;
+        height: 650px;
+        flex: 0 0 100%; /* Każdy blok zajmuje pełną szerokość */
+    }
+    #kbok{
+        flex-direction: row;
+        justify-content: left;
+        width: 100%;
+        height: 700px;
+        display: flex;
+        padding-top: 60px;
+        padding-right: 0px;
+        flex: 0 0 100%; /* Każdy blok zajmuje pełną szerokość */
+        }
+    .kbok-hidden-mobile {
+    opacity: 0;
+    transform: translateX(0px);
+    transition: 1s ease-in-out;
+    }
+
+    .kbok-visible-mobile {
+        opacity: 1;
+        transform: translateY(0);
+        transition: 1s ease-in-out;
+    }
+        #bloki::-webkit-scrollbar {
+            height: 8px; /* Wysokość paska przewijania */
+          }
+          
+          #bloki::-webkit-scrollbar-thumb {
+            background-color: rgb(20, 172, 0); /* Kolor uchwytu paska przewijania */
+            border-radius: 10px; /* Zaokrąglenie uchwytu */
+          }
+          
+          #bloki::-webkit-scrollbar-track {
+            background-color: #f1f1f1; /* Kolor tła paska przewijania */
+            border-radius: 10px; /* Zaokrąglenie tła paska */
+          }
+          
+          #bloki::-webkit-scrollbar-button {
+            display: none; /* Ukrywa przyciski przewijania */
+          }
+
+    #blok1, #blok2, #blok3, #blok4, #blok5 {
+        display: block;
+        flex: 0 0 100%; /* Każdy blok zajmuje pełną szerokość */
+        width: 100vw; /* Szerokość bloku na pełny ekran */
+        transform: perspective(0px) rotateY(0deg) translateX(0px);
+        margin: 0px;
+    }
+    #blok1:hover, #blok2:hover, #blok3:hover, #blok4:hover, #blok5:hover {
+        display: flex;
+        flex: 0 0 100%; /* Każdy blok zajmuje pełną szerokość */
+        width: 100vw; /* Szerokość bloku na pełny ekran */
+        transform: perspective(0px) rotateY(0deg) translateX(0px);
+        margin: 0px;
+    }
+
+    /*Dlaczego my*/
+    #dmbg {
+        background-color: rgba(75, 75, 75, 0.5);
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        color: white;
+    }
+
+    #dm {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        color: white;
+        opacity: 0;
+        transform: translateY(0px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    #dm.visible {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+
+    #dm.hidden {
+        opacity: 0;
+        transform: translateX(0px);
+    }
+
+    #content {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+    }
+    #content p{
+        margin-top: 35px;
+    }
+    #zdj{
+        display: none;
+    }
+
+    /*opinie*/
+    #opinie {
+        height: 590px;
+        display: flex;
+        overflow: hidden; /* Ukrywa elementy wychodzące poza kontener */
+        align-items: center;
+        background-color: rgba(75, 75, 75, 0.5);
+        position: relative;
+        white-space: nowrap;
+    }
+    #opinia{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: absolute; bottom: 340px;
+        
+    }
+    #answer{
+        width: 100%;
+        height: 100px;
+        margin-bottom: 0px;
+        margin-top: 0px;
+    }
+    #wyslij{
+        margin-bottom: 100px;
+    }
+    #stopka{
+        clear: both;
+        width: 100%;
+        height: auto;
+        background-color: rgb(36, 36, 36);
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        color: white;
+    }
+    #prawa{
+        text-align: center;
+    }
+    #kontakt{
+        text-align: center;
+    }
+}
+
+
+@media (min-width: 481px) and (max-width: 720px) {
+    body {
+        background-color: rgb(36, 36, 36);
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000; /* Zapewnia, że nagłówek będzie na wierzchu */
+        background-color: rgb(36, 36, 36); /* Dodaj kolor tła, aby upewnić się, że nagłówek jest widoczny */
+        padding-left: 20px;
+    }
+    #nag{
+        position: fixed; top: 0;
+    }
+
+    #hamburger {
+        display: block;
+        cursor: pointer;
+        width: 30px;
+        height: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-right: 30px;
+    }
+
+    #hamburger div {
+        width: 30px;
+        height: 5px;
+        background-color: white;
+    }
+
+    /* Ukrycie menu po załadowaniu strony */
+    #menu {
+        display: block;
+        position: absolute;
+        top: 100px;
+        right: 0;
+        background-color: rgba(75, 75, 75);
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+        width: 100%;
+        height: 100vh;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        border: 2px solid rgb(20, 172, 0);
+        transform: translateX(720px);
+        transition: 1s;
+        float: right;
+    }
+
+    #menu.show {
+        display: block;
+        transform: translateX(0px);
+        transition: 1s;
+        overflow: hidden;
+    }
+
+    #menu li {
+        text-align: center;
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+    }
+
+    #menu div {
+        display: none;
+    }
+
+    /* Styl dla aktywnego elementu w menu */
+    #menu a {
+        text-decoration: none;
+        color: white;
+        border: 2px solid rgb(20, 172, 0);
+        min-width: 100%;
+        display: block;
+    }
+
+    #hamburger.active + #menu {
+        display: block;
+    }
+
+
+    /*nasza oferta*/
+    #bloki {
+        display: block;
+        flex-direction: row; /* Bloki ustawione obok siebie */
+        overflow-x: scroll;
+        width: 100%;
+        height: 650px;
+        flex: 0 0 100%; /* Każdy blok zajmuje pełną szerokość */
+    }
+    #kbok{
+        flex-direction: row;
+        justify-content: left;
+        width: 100%;
+        height: 700px;
+        display: flex;
+        padding-top: 60px;
+        padding-right: 0px;
+        flex: 0 0 100%; /* Każdy blok zajmuje pełną szerokość */
+        }
+    .kbok-hidden-mobile {
+    opacity: 0;
+    transform: translateX(0px);
+    transition: 1s ease-in-out;
+    }
+
+    .kbok-visible-mobile {
+        opacity: 1;
+        transform: translateY(0);
+        transition: 1s ease-in-out;
+    }
+        #bloki::-webkit-scrollbar {
+            height: 8px; /* Wysokość paska przewijania */
+          }
+          
+          #bloki::-webkit-scrollbar-thumb {
+            background-color: rgb(20, 172, 0); /* Kolor uchwytu paska przewijania */
+            border-radius: 10px; /* Zaokrąglenie uchwytu */
+          }
+          
+          #bloki::-webkit-scrollbar-track {
+            background-color: #f1f1f1; /* Kolor tła paska przewijania */
+            border-radius: 10px; /* Zaokrąglenie tła paska */
+          }
+          
+          #bloki::-webkit-scrollbar-button {
+            display: none; /* Ukrywa przyciski przewijania */
+          }
+
+    #blok1, #blok2, #blok3, #blok4, #blok5 {
+        display: flex;
+        flex: 0 0 100%; /* Każdy blok zajmuje pełną szerokość */
+        width: 100vw; /* Szerokość bloku na pełny ekran */
+        transform: perspective(0px) rotateY(0deg) translateX(0px);
+        margin: 0px;
+    }
+    #blok1:hover, #blok2:hover, #blok3:hover, #blok4:hover, #blok5:hover {
+        display: flex;
+        flex: 0 0 100%; /* Każdy blok zajmuje pełną szerokość */
+        width: 100vw; /* Szerokość bloku na pełny ekran */
+        transform: perspective(0px) rotateY(0deg) translateX(0px);
+        margin: 0px;
+    }
+
+    /*Dlaczego my*/
+    #dmbg {
+        background-color: rgba(75, 75, 75, 0.5);
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        color: white;
+    }
+
+    #dm {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        color: white;
+        opacity: 0;
+        transform: translateY(0px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    #dm.visible {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+
+    #dm.hidden {
+        opacity: 0;
+        transform: translateX(0px);
+    }
+
+    #content {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+    }
+    #content p{
+        margin-top: 35px;
+    }
+    #zdj{
+        display: none;
+    }
+
+    /*opinie*/
+    #opinie {
+        height: 590px;
+        display: flex;
+        overflow: hidden; /* Ukrywa elementy wychodzące poza kontener */
+        align-items: center;
+        background-color: rgba(75, 75, 75, 0.5);
+        position: relative;
+        white-space: nowrap;
+    }
+    #opinia{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: absolute; bottom: 340px;
+        
+    }
+    #answer{
+        width: 100%;
+        height: 100px;
+        margin-bottom: 0px;
+        margin-top: 0px;
+    }
+    #wyslij{
+        margin-bottom: 100px;
+    }
+    #stopka{
+        clear: both;
+        width: 100%;
+        height: auto;
+        background-color: rgb(36, 36, 36);
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        color: white;
+    }
+    #prawa{
+        text-align: center;
+    }
+    #kontakt{
+        text-align: center;
+    }
+}
+
+
+@media (min-width: 721px) and (max-width: 1024px) {
+    body {
+        background-color: rgb(36, 36, 36);
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000; /* Zapewnia, że nagłówek będzie na wierzchu */
+        background-color: rgb(36, 36, 36); /* Dodaj kolor tła, aby upewnić się, że nagłówek jest widoczny */
+        padding-left: 30px;
+    }
+    #nag{
+        position: fixed; top: 0;
+    }
+
+    #hamburger {
+        display: block;
+        cursor: pointer;
+        width: 30px;
+        height: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-right: 30px;
+    }
+
+    #hamburger div {
+        width: 30px;
+        height: 5px;
+        background-color: white;
+    }
+
+    /* Ukrycie menu po załadowaniu strony */
+    #menu {
+        display: block;
+        position: absolute;
+        top: 100px;
+        right: 0;
+        background-color: rgba(75, 75, 75);
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+        width: 100%;
+        height: 100vh;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        border: 2px solid rgb(20, 172, 0);
+        transform: translateX(1000px);
+        transition: 1s;
+        float: right;
+    }
+
+    #menu.show {
+        display: block;
+        transform: translateX(0px);
+        transition: 1s;
+        overflow: hidden;
+    }
+
+    #menu li {
+        text-align: center;
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+    }
+
+    #menu div {
+        display: none;
+    }
+
+    /* Styl dla aktywnego elementu w menu */
+    #menu a {
+        text-decoration: none;
+        color: white;
+        border: 2px solid rgb(20, 172, 0);
+        min-width: 100%;
+        display: block;
+    }
+
+    #hamburger.active + #menu {
+        display: block;
+    }
+
+
+    /*nasza oferta*/
+    #bloki {
+        display: block;
+        flex-direction: row; /* Bloki ustawione obok siebie */
+        overflow-x: scroll;
+        width: 100%;
+        height: 650px;
+        flex: 0 0 100%; /* Każdy blok zajmuje pełną szerokość */
+    }
+    #kbok{
+        flex-direction: row;
+        justify-content: left;
+        width: 100%;
+        height: 700px;
+        display: flex;
+        padding-top: 60px;
+        padding-right: 0px;
+        flex: 0 0 100%; /* Każdy blok zajmuje pełną szerokość */
+        }
+    .kbok-hidden-mobile {
+    opacity: 0;
+    transform: translateX(0px);
+    transition: 1s ease-in-out;
+    }
+
+    .kbok-visible-mobile {
+        opacity: 1;
+        transform: translateY(0);
+        transition: 1s ease-in-out;
+    }
+        #bloki::-webkit-scrollbar {
+            height: 8px; /* Wysokość paska przewijania */
+          }
+          
+          #bloki::-webkit-scrollbar-thumb {
+            background-color: rgb(20, 172, 0); /* Kolor uchwytu paska przewijania */
+            border-radius: 10px; /* Zaokrąglenie uchwytu */
+          }
+          
+          #bloki::-webkit-scrollbar-track {
+            background-color: #f1f1f1; /* Kolor tła paska przewijania */
+            border-radius: 10px; /* Zaokrąglenie tła paska */
+          }
+          
+          #bloki::-webkit-scrollbar-button {
+            display: none; /* Ukrywa przyciski przewijania */
+          }
+
+    #blok1, #blok2, #blok3, #blok4, #blok5 {
+        display: flex;
+        flex: 0 0 100%; /* Każdy blok zajmuje pełną szerokość */
+        width: 100vw; /* Szerokość bloku na pełny ekran */
+        transform: perspective(0px) rotateY(0deg) translateX(0px);
+        margin: 0px;
+    }
+    #blok1:hover, #blok2:hover, #blok3:hover, #blok4:hover, #blok5:hover {
+        display: flex;
+        flex: 0 0 100%; /* Każdy blok zajmuje pełną szerokość */
+        width: 100vw; /* Szerokość bloku na pełny ekran */
+        transform: perspective(0px) rotateY(0deg) translateX(0px);
+        margin: 0px;
+    }
+
+    /*Dlaczego my*/
+    #dmbg {
+        background-color: rgba(75, 75, 75, 0.5);
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        color: white;
+    }
+
+    #dm {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        color: white;
+        opacity: 0;
+        transform: translateY(0px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    #dm.visible {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+
+    #dm.hidden {
+        opacity: 0;
+        transform: translateX(0px);
+    }
+
+    #content {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+    }
+    #content p{
+        margin-top: 35px;
+    }
+    #zdj{
+        display: none;
+    }
+
+    /*opinie*/
+    #opinie {
+        height: 590px;
+        display: flex;
+        overflow: hidden; /* Ukrywa elementy wychodzące poza kontener */
+        align-items: center;
+        background-color: rgba(75, 75, 75, 0.5);
+        position: relative;
+        white-space: nowrap;
+    }
+    #opinia{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: absolute; bottom: 340px;
+        
+    }
+    #answer{
+        width: 100%;
+        height: 100px;
+        margin-bottom: 0px;
+        margin-top: 0px;
+    }
+    #wyslij{
+        margin-bottom: 100px;
+    }
+    #stopka{
+        clear: both;
+        width: 100%;
+        height: auto;
+        background-color: rgb(36, 36, 36);
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        color: white;
+    }
+    #prawa{
+        text-align: center;
+    }
+    #kontakt{
+        text-align: center;
+    }
+}
+
+
+@media (min-width: 1024px) and (max-width: 1368px) {
+    body {
+        background-color: rgb(36, 36, 36);
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000; /* Zapewnia, że nagłówek będzie na wierzchu */
+        background-color: rgb(36, 36, 36); /* Dodaj kolor tła, aby upewnić się, że nagłówek jest widoczny */
+        padding-left: 50px;
+    }
+    #nag{
+        position: fixed; top: 0;
+    }
+
+    #hamburger {
+        display: block;
+        cursor: pointer;
+        width: 30px;
+        height: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-right: 30px;
+    }
+
+    #hamburger div {
+        width: 30px;
+        height: 5px;
+        background-color: white;
+    }
+
+    /* Ukrycie menu po załadowaniu strony */
+    #menu {
+        display: block;
+        position: absolute;
+        top: 100px;
+        right: 0;
+        background-color: rgba(75, 75, 75);
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+        width: 100%;
+        height: 100vh;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        border: 2px solid rgb(20, 172, 0);
+        transform: translateX(1366px);
+        transition: 1s;
+        float: right;
+    }
+
+    #menu.show {
+        display: block;
+        transform: translateX(0px);
+        transition: 1s;
+        overflow: hidden;
+    }
+
+    #menu li {
+        text-align: center;
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+    }
+
+    #menu div {
+        display: none;
+    }
+
+    /* Styl dla aktywnego elementu w menu */
+    #menu a {
+        text-decoration: none;
+        color: white;
+        border: 2px solid rgb(20, 172, 0);
+        min-width: 100%;
+        display: block;
+    }
+
+    #hamburger.active + #menu {
+        display: block;
+    }
+
+
+    /*nasza oferta*/
+    #bloki {
+        display: block;
+        flex-direction: row; /* Bloki ustawione obok siebie */
+        overflow-x: scroll;
+        width: 100%;
+        height: 650px;
+        flex: 0 0 100%; /* Każdy blok zajmuje pełną szerokość */
+    }
+    #kbok{
+        flex-direction: row;
+        justify-content: left;
+        width: 100%;
+        height: 700px;
+        display: flex;
+        padding-top: 60px;
+        padding-right: 0px;
+        flex: 0 0 100%; /* Każdy blok zajmuje pełną szerokość */
+        }
+    .kbok-hidden-mobile {
+    opacity: 0;
+    transform: translateX(0px);
+    transition: 1s ease-in-out;
+    }
+
+    .kbok-visible-mobile {
+        opacity: 1;
+        transform: translateY(0);
+        transition: 1s ease-in-out;
+    }
+        #bloki::-webkit-scrollbar {
+            height: 8px; /* Wysokość paska przewijania */
+          }
+          
+          #bloki::-webkit-scrollbar-thumb {
+            background-color: rgb(20, 172, 0); /* Kolor uchwytu paska przewijania */
+            border-radius: 10px; /* Zaokrąglenie uchwytu */
+          }
+          
+          #bloki::-webkit-scrollbar-track {
+            background-color: #f1f1f1; /* Kolor tła paska przewijania */
+            border-radius: 10px; /* Zaokrąglenie tła paska */
+          }
+          
+          #bloki::-webkit-scrollbar-button {
+            display: none; /* Ukrywa przyciski przewijania */
+          }
+
+    #blok1, #blok2, #blok3, #blok4, #blok5 {
+        display: flex;
+        flex: 0 0 100%; /* Każdy blok zajmuje pełną szerokość */
+        width: 100vw; /* Szerokość bloku na pełny ekran */
+        transform: perspective(0px) rotateY(0deg) translateX(0px);
+        margin: 0px;
+    }
+    #blok1:hover, #blok2:hover, #blok3:hover, #blok4:hover, #blok5:hover {
+        display: flex;
+        flex: 0 0 100%; /* Każdy blok zajmuje pełną szerokość */
+        width: 100vw; /* Szerokość bloku na pełny ekran */
+        transform: perspective(0px) rotateY(0deg) translateX(0px);
+        margin: 0px;
+    }
+
+    /*Dlaczego my*/
+    #dmbg {
+        background-color: rgba(75, 75, 75, 0.5);
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        color: white;
+    }
+
+    #dm {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        color: white;
+        opacity: 0;
+        transform: translateY(0px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    #dm.visible {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+
+    #dm.hidden {
+        opacity: 0;
+        transform: translateX(0px);
+    }
+
+    #content {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+    }
+    #content p{
+        margin-top: 35px;
+    }
+    #zdj{
+        display: none;
+    }
+
+    /*opinie*/
+    #opinie {
+        height: 590px;
+        display: flex;
+        overflow: hidden; /* Ukrywa elementy wychodzące poza kontener */
+        align-items: center;
+        background-color: rgba(75, 75, 75, 0.5);
+        position: relative;
+        white-space: nowrap;
+    }
+    #opinia{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: absolute; bottom: 340px;
+        
+    }
+    #answer{
+        width: 100%;
+        height: 100px;
+        margin-bottom: 0px;
+        margin-top: 0px;
+    }
+    #wyslij{
+        margin-bottom: 100px;
+    }
+    #stopka{
+        clear: both;
+        width: 100%;
+        height: auto;
+        background-color: rgb(36, 36, 36);
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        color: white;
+    }
+    #prawa{
+        text-align: center;
+    }
+    #kontakt{
+        text-align: center;
+    }
+}

@@ -1,0 +1,1255 @@
+*{
+    font-family: sans-serif;
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+html {
+    width: 100%;
+    margin: 0;
+    overflow-x: hidden;
+    padding: 0;
+}
+body{
+    background-color: rgb(36, 36, 36);
+    overflow-x: hidden;
+    overflow: hidden;
+}
+header {
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 10px 10px rgb(20, 172, 0);
+    color: black;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky; top: 0px;
+    z-index: 1000;
+    padding-left: 100px;
+}
+header h1{
+    margin-left: 30px;
+}
+#hamburger {
+    display: none; /* Ukrywa hamburger na większych ekranach */
+}
+#menu{
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+#btntext{
+    display: none;
+}
+#menu li {
+    padding: 10px;
+}
+#menu a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px 20px 10px 20px;
+    transition: 0.5s;
+    border-radius: 25px;
+
+}
+#menu a:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: 0.5s;
+}
+#szukaj {
+    width: 0px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0px 20px;
+    border-radius: 25px;
+    color: white;
+    font-size: 16px;
+    opacity: 0; 
+    transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+#szukaj:focus, #szukaj:hover {
+    border: none;
+    outline: none;
+    padding-left: 40px;
+}
+
+.input-box {
+    position: absolute; left: 400px;
+    display: flex;
+    align-items: center;
+    border: 1px solid white;
+    border-radius: 25px;
+}
+
+.input-box i {
+    position: absolute; left: 15px;
+    color: white;
+    cursor: pointer;
+}
+
+.input-box:focus-within, .input-box:hover #szukaj {
+    width: 300px;
+    opacity: 1;
+}
+
+#prof{
+    height: 100px;
+    background-color: blue;
+}
+
+#button1 {
+    background-color: rgb(255, 255, 255);
+    width: 40px;
+    height: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+    margin-right: 30px;
+}
+
+#btn1{
+    background-color: black;
+    height: 20px;
+    width: 20px;
+    border-radius: 10px;
+}
+
+#nag{
+    opacity: 0;
+    transition: 1s ease-in;
+}
+
+#container{
+    width: 100%;
+    height: 800px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(75, 75, 75, 0.5);
+}
+#social-media{
+    width: 30%;
+    height: 650px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 2px solid rgb(20, 172, 0);
+    float: left;
+    color: white;
+    gap: 40px;
+    border-radius: 25px;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 10px 10px rgb(20, 172, 0);
+}
+.smtext{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 50%;
+    height: 60px;
+    background-color: rgb(20, 172, 0);
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    font-size: larger;
+    z-index: 40;
+}
+.btn {
+    width: 80%;
+    height: 90px;
+    display: flex;
+    background-color: transparent;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 50px;
+    border: 2px solid rgb(20, 172, 0);
+}
+
+.btn .btnlink {
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background-color: rgb(36, 36, 36);
+    text-decoration: none;
+    font-size: x-large;
+    font-weight: bold;
+    transition: 1s;
+}
+.btn:hover .btnlink{
+    background-color: black;
+    box-shadow: 0px 0px 7px 7px rgb(20, 172, 0);
+    font-size: xx-large;
+}
+
+#formularz{
+    width: 30%;
+    height: 650px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 2px solid rgb(20, 172, 0);
+    float: left;
+    color: white;
+    gap: 40px;
+    border-radius: 25px;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 10px 10px rgb(20, 172, 0);
+    z-index: 40;
+}
+#formkon{
+    width: 100%;
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 40;
+}
+.kontakt{
+    width: 100%;
+    height: 650px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 40;
+}
+.formsput{
+    width: 80%;
+    height: 50px;
+    margin-bottom: 30px;
+    background-color: transparent;
+    border: 2px solid rgb(20, 172, 0);
+    border-radius: 25px;
+    color: white;
+    padding-left: 30px;
+    font-size: larger;
+}
+textarea{
+    display: flex;
+    max-width: 80%;
+    max-height: 80px;
+    min-height: 80px;
+    min-width: 80%;
+    padding-top: 10px;
+    padding-right: 30px;
+}
+.formbtn {
+    position: absolute; bottom: 130px;
+    width: 170px;
+    height: 50px;
+    background-color: transparent;
+    border: 2px solid rgb(20, 172, 0);
+    border-radius: 25px;
+    color: white;
+    font-size: larger;
+    font-weight: bold;
+    outline: none;
+    margin-top: 20px;
+    transition: 0.6s;
+}
+.formbtn:hover{
+    background-color: rgb(36, 36, 36);
+    transform: scale(1.05);
+}
+
+.formsput {
+    border: 2px solid rgb(20, 172, 0);
+    outline: none;
+}
+.formsput:focus {
+    border: 2px solid rgb(20, 172, 0);
+}
+.formsput:hover {
+    border: 2px solid rgb(20, 172, 0);
+}
+.formsput:focus-visible {
+    border: 2px solid rgb(20, 172, 0);
+}
+
+#przyciski{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Styl dla modala */
+.modal {
+    opacity: 0; /* Ukryty domyślnie */
+    width: 30%;
+    height: 650px;
+    position: fixed;
+    top: 175px;
+    left: 60%;
+    background-color: rgb(36, 36, 36);
+    color: white;
+    padding: 20px;
+    border-radius: 25px;
+    z-index: 1000;
+    transition: 1s;
+    pointer-events: none;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.active {
+    opacity: 1; /* Pokazuje modal */
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+    width: 30%;
+    height: 650px;
+    position: fixed;
+    top: 175px;
+    left: 60%;
+}
+
+.modal h2 {
+    font-size: 20px;
+    margin-top: 50%;
+    color: rgb(20, 172, 0);
+}
+
+
+
+
+
+#stopka{
+    clear: both;
+    width: 100%;
+    height: 250px;
+    background-color: rgb(36, 36, 36);
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    gap: 500px;
+    color: white;
+}
+#kontaktsto{
+    text-align: center;
+    justify-content: center;
+    text-align: left;
+    line-height: 30px;
+    color: white;
+}
+#kontaktsto a{
+    color: white;
+}
+#social-mediasto{
+    display: table-column;
+    text-align: center;
+    justify-content: center;
+    line-height: 50px;color: white;
+}
+#social-mediasto ul{
+    list-style: none;
+}
+#social-mediasto a{
+    color: white;
+}
+#prawa{
+    text-align: right;
+    justify-content: center;
+    line-height: 30px;
+}
+#prawa a{
+    color: white;
+}
+
+
+/*responsive */
+
+@media (max-width: 359px){
+    body {
+        background-color: rgb(36, 36, 36);
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 1000; /* Zapewnia, że nagłówek będzie na wierzchu */
+        background-color: rgb(36, 36, 36); /* Dodaj kolor tła, aby upewnić się, że nagłówek jest widoczny */
+        padding-left: 10px;
+    }
+    #nag{
+        position: sticky; top: 0;
+    }
+
+    #hamburger {
+        display: block;
+        cursor: pointer;
+        width: 30px;
+        height: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-right: 30px;
+    }
+
+    #hamburger div {
+        width: 30px;
+        height: 5px;
+        background-color: white;
+    }
+
+    /* Ukrycie menu po załadowaniu strony */
+    #menu {
+        display: block;
+        position: absolute;
+        top: 100px;
+        right: 0;
+        background-color: rgba(75, 75, 75);
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+        width: 100%;
+        height: 100vh;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        border: 2px solid rgb(20, 172, 0);
+        transform: translateX(360px);
+        transition: 1s;
+        float: right;
+        gap: 20px;
+    }
+
+    #menu.show {
+        display: block;
+        transform: translateX(0px);
+        transition: 1s;
+        overflow: hidden;
+    }
+
+    #menu li {
+        text-align: center;
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+    }
+
+    #menu div {
+        display: none;
+    }
+
+    /* Styl dla aktywnego elementu w menu */
+    #menu a {
+        text-decoration: none;
+        color: white;
+        border: 2px solid rgb(20, 172, 0);
+        min-width: 100%;
+        display: block;
+    }
+
+    #hamburger.active + #menu {
+        display: block;
+    }
+
+
+    /*Bloki */
+    #container{
+        width: 100%;
+        height: 1500px;
+        gap: 100px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(75, 75, 75, 0.5);
+    }
+    .smtext{
+        width: 100%;
+        border-radius: 20px;
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+    }
+
+    #social-media{
+        width: 90%;
+    }
+
+    #formularz{
+        width: 90%;
+    }
+
+    .formbtn{
+        position: relative; bottom: 10px;
+    }
+
+    .modal {
+        opacity: 0; /* Ukryty domyślnie */
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        background-color: rgb(36, 36, 36);
+        color: white;
+        padding: 20px;
+        border-radius: 0px;
+        z-index: 1000;
+        transition: 1s;
+        pointer-events: none;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .modal.active {
+        opacity: 1; /* Pokazuje modal */
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        transition: 1s;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+    }
+
+
+    /*Stopka */
+
+    #stopka{
+        clear: both;
+        width: 100%;
+        height: 250px;
+        height: auto;
+        background-color: rgb(36, 36, 36);
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        color: white;
+    }
+    #prawa{
+        text-align: center;
+    }
+    #kontaktsto{
+        text-align: center;
+    }
+}
+
+
+
+@media (min-width: 360px) and (max-width: 480px){
+    body {
+        background-color: rgb(36, 36, 36);
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 1000; /* Zapewnia, że nagłówek będzie na wierzchu */
+        background-color: rgb(36, 36, 36); /* Dodaj kolor tła, aby upewnić się, że nagłówek jest widoczny */
+        padding-left: 20px;
+    }
+    #nag{
+        position: sticky; top: 0;
+    }
+
+    #hamburger {
+        display: block;
+        cursor: pointer;
+        width: 30px;
+        height: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-right: 30px;
+    }
+
+    #hamburger div {
+        width: 30px;
+        height: 5px;
+        background-color: white;
+    }
+
+    /* Ukrycie menu po załadowaniu strony */
+    #menu {
+        display: block;
+        position: absolute;
+        top: 100px;
+        right: 0;
+        background-color: rgba(75, 75, 75);
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+        width: 100%;
+        height: 100vh;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        border: 2px solid rgb(20, 172, 0);
+        transform: translateX(481px);
+        transition: 1s;
+        float: right;
+        gap: 20px;
+    }
+
+    #menu.show {
+        display: block;
+        transform: translateX(0px);
+        transition: 1s;
+        overflow: hidden;
+    }
+
+    #menu li {
+        text-align: center;
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+    }
+
+    #menu div {
+        display: none;
+    }
+
+    /* Styl dla aktywnego elementu w menu */
+    #menu a {
+        text-decoration: none;
+        color: white;
+        border: 2px solid rgb(20, 172, 0);
+        min-width: 100%;
+        display: block;
+    }
+
+    #hamburger.active + #menu {
+        display: block;
+    }
+
+
+    /*Bloki */
+    #container{
+        width: 100%;
+        height: 1500px;
+        gap: 100px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(75, 75, 75, 0.5);
+    }
+
+    .smtext{
+        width: 100%;
+        border-radius: 20px;
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+    }
+
+    #social-media{
+        width: 90%;
+    }
+
+    #formularz{
+        width: 90%;
+    }
+
+    .formbtn{
+        position: relative; bottom: 10px;
+    }
+
+    .modal {
+        opacity: 0; /* Ukryty domyślnie */
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        background-color: rgb(36, 36, 36);
+        color: white;
+        padding: 20px;
+        border-radius: 0px;
+        z-index: 1000;
+        transition: 1s;
+        pointer-events: none;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .modal.active {
+        opacity: 1; /* Pokazuje modal */
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        transition: 1s;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+    }
+
+    /*Stopka */
+
+    #stopka{
+        clear: both;
+        width: 100%;
+        height: 250px;
+        height: auto;
+        background-color: rgb(36, 36, 36);
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        color: white;
+    }
+    #prawa{
+        text-align: center;
+    }
+    #kontaktsto{
+        text-align: center;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 720px){
+    body {
+        background-color: rgb(36, 36, 36);
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 1000; /* Zapewnia, że nagłówek będzie na wierzchu */
+        background-color: rgb(36, 36, 36); /* Dodaj kolor tła, aby upewnić się, że nagłówek jest widoczny */
+        padding-left: 20px;
+    }
+    #nag{
+        position: sticky; top: 0;
+    }
+
+    #hamburger {
+        display: block;
+        cursor: pointer;
+        width: 30px;
+        height: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-right: 30px;
+    }
+
+    #hamburger div {
+        width: 30px;
+        height: 5px;
+        background-color: white;
+    }
+
+    /* Ukrycie menu po załadowaniu strony */
+    #menu {
+        display: block;
+        position: absolute;
+        top: 100px;
+        right: 0;
+        background-color: rgba(75, 75, 75);
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+        width: 100%;
+        height: 100vh;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        border: 2px solid rgb(20, 172, 0);
+        transform: translateX(721px);
+        transition: 1s;
+        float: right;
+        gap: 20px;
+    }
+
+    #menu.show {
+        display: block;
+        transform: translateX(0px);
+        transition: 1s;
+        overflow: hidden;
+    }
+
+    #menu li {
+        text-align: center;
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+    }
+
+    #menu div {
+        display: none;
+    }
+
+    /* Styl dla aktywnego elementu w menu */
+    #menu a {
+        text-decoration: none;
+        color: white;
+        border: 2px solid rgb(20, 172, 0);
+        min-width: 100%;
+        display: block;
+    }
+
+    #hamburger.active + #menu {
+        display: block;
+    }
+
+
+    /*Bloki */
+    #container{
+        width: 100%;
+        height: 1500px;
+        gap: 100px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(75, 75, 75, 0.5);
+    }
+
+    #social-media{
+        width: 90%;
+    }
+
+    #formularz{
+        width: 90%;
+    }
+
+    .formbtn{
+        position: relative; bottom: 10px;
+    }
+
+    .modal {
+        opacity: 0; /* Ukryty domyślnie */
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        background-color: rgb(36, 36, 36);
+        color: white;
+        padding: 20px;
+        border-radius: 0px;
+        z-index: 1000;
+        transition: 1s;
+        pointer-events: none;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .modal.active {
+        opacity: 1; /* Pokazuje modal */
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        transition: 1s;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+    }
+
+    /*Stopka */
+
+    #stopka{
+        clear: both;
+        width: 100%;
+        height: 250px;
+        height: auto;
+        background-color: rgb(36, 36, 36);
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        color: white;
+    }
+    #prawa{
+        text-align: center;
+    }
+    #kontaktsto{
+        text-align: center;
+    }
+}
+
+@media (min-width: 721px) and (max-width: 1024px){
+    body {
+        background-color: rgb(36, 36, 36);
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 1000; /* Zapewnia, że nagłówek będzie na wierzchu */
+        background-color: rgb(36, 36, 36); /* Dodaj kolor tła, aby upewnić się, że nagłówek jest widoczny */
+        padding-left: 30px;
+    }
+    #nag{
+        position: sticky; top: 0;
+    }
+
+    #hamburger {
+        display: block;
+        cursor: pointer;
+        width: 30px;
+        height: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-right: 30px;
+    }
+
+    #hamburger div {
+        width: 30px;
+        height: 5px;
+        background-color: white;
+    }
+
+    /* Ukrycie menu po załadowaniu strony */
+    #menu {
+        display: block;
+        position: absolute;
+        top: 100px;
+        right: 0;
+        background-color: rgba(75, 75, 75);
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+        width: 100%;
+        height: 100vh;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        border: 2px solid rgb(20, 172, 0);
+        transform: translateX(1025px);
+        transition: 1s;
+        float: right;
+        gap: 20px;
+    }
+
+    #menu.show {
+        display: block;
+        transform: translateX(0px);
+        transition: 1s;
+        overflow: hidden;
+    }
+
+    #menu li {
+        text-align: center;
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+    }
+
+    #menu div {
+        display: none;
+    }
+
+    /* Styl dla aktywnego elementu w menu */
+    #menu a {
+        text-decoration: none;
+        color: white;
+        border: 2px solid rgb(20, 172, 0);
+        min-width: 100%;
+        display: block;
+    }
+
+    #hamburger.active + #menu {
+        display: block;
+    }
+
+
+    /*Bloki */
+    #container{
+        width: 100%;
+        height: 1500px;
+        gap: 100px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(75, 75, 75, 0.5);
+    }
+
+    #social-media{
+        width: 90%;
+    }
+
+    #formularz{
+        width: 90%;
+    }
+
+    .formbtn{
+        position: relative; bottom: 10px;
+    }
+
+    .modal {
+        opacity: 0; /* Ukryty domyślnie */
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        background-color: rgb(36, 36, 36);
+        color: white;
+        padding: 20px;
+        border-radius: 0px;
+        z-index: 1000;
+        transition: 1s;
+        pointer-events: none;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .modal.active {
+        opacity: 1; /* Pokazuje modal */
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        transition: 1s;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+    }
+
+
+    /*Stopka */
+
+    #stopka{
+        clear: both;
+        width: 100%;
+        height: 250px;
+        height: auto;
+        background-color: rgb(36, 36, 36);
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        color: white;
+    }
+    #prawa{
+        text-align: center;
+    }
+    #kontaktsto{
+        text-align: center;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1368px){
+    body {
+        background-color: rgb(36, 36, 36);
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 1000; /* Zapewnia, że nagłówek będzie na wierzchu */
+        background-color: rgb(36, 36, 36); /* Dodaj kolor tła, aby upewnić się, że nagłówek jest widoczny */
+        padding-left: 50px;
+    }
+    #nag{
+        position: sticky; top: 0;
+    }
+
+    #hamburger {
+        display: block;
+        cursor: pointer;
+        width: 30px;
+        height: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-right: 30px;
+    }
+
+    #hamburger div {
+        width: 30px;
+        height: 5px;
+        background-color: white;
+    }
+
+    /* Ukrycie menu po załadowaniu strony */
+    #menu {
+        display: block;
+        position: absolute;
+        top: 100px;
+        right: 0;
+        background-color: rgba(75, 75, 75);
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+        width: 100%;
+        height: 100vh;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        border: 2px solid rgb(20, 172, 0);
+        transform: translateX(1369px);
+        transition: 1s;
+        float: right;
+        gap: 20px;
+    }
+
+    #menu.show {
+        display: block;
+        transform: translateX(0px);
+        transition: 1s;
+        overflow: hidden;
+    }
+
+    #menu li {
+        text-align: center;
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+    }
+
+    #menu div {
+        display: none;
+    }
+
+    /* Styl dla aktywnego elementu w menu */
+    #menu a {
+        text-decoration: none;
+        color: white;
+        border: 2px solid rgb(20, 172, 0);
+        min-width: 100%;
+        display: block;
+    }
+
+    #hamburger.active + #menu {
+        display: block;
+    }
+
+
+    /*Bloki */
+    #container{
+        width: 100%;
+        height: 1500px;
+        gap: 100px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(75, 75, 75, 0.5);
+    }
+
+    #social-media{
+        width: 90%;
+    }
+
+    #formularz{
+        width: 90%;
+    }
+
+    .formbtn{
+        position: relative; bottom: 10px;
+    }
+
+    .modal {
+        opacity: 0; /* Ukryty domyślnie */
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        background-color: rgb(36, 36, 36);
+        color: white;
+        padding: 20px;
+        border-radius: 0px;
+        z-index: 1000;
+        transition: 1s;
+        pointer-events: none;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .modal.active {
+        opacity: 1; /* Pokazuje modal */
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        transition: 1s;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+    }
+
+    /*Stopka */
+
+    #stopka{
+        clear: both;
+        width: 100%;
+        height: 250px;
+        height: auto;
+        background-color: rgb(36, 36, 36);
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        color: white;
+    }
+    #prawa{
+        text-align: center;
+    }
+    #kontaktsto{
+        text-align: center;
+    }
+}

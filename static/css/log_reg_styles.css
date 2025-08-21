@@ -1,0 +1,1056 @@
+*{
+    font-family: sans-serif;
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+html {
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+}
+
+body{
+    margin: 0px;
+    padding: 0px;
+    height: 100vh;
+    position: relative;
+    background-color: rgb(36, 36, 36);
+    overflow: hidden;
+}
+main{
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+#formsy{
+    width: 100%;
+    height: 100%;
+}
+.error {
+    color: red;
+    font-size: 14px;
+}
+
+.success {
+    color: green;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#panlog {
+    width: 25%;
+    height: 600px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid rgb(20, 172, 0);
+    border-radius: 25px;
+    box-shadow: 0px 0px 10px 5px rgb(20, 172, 0);
+    position: absolute;
+    top: 150px;
+    left: 200px;
+    overflow-x: hidden;
+    animation: movingShadow 5s infinite linear;
+    font-size: large;
+}
+@keyframes movingShadow {
+    0% {
+        border-color: rgb(20, 172, 0);
+        box-shadow: 0px 0px 10px 5px rgb(20, 172, 0);
+    }
+    50% {
+        border-color: rgb(0, 102, 255);
+        box-shadow: 0px 0px 20px 10px rgb(0, 102, 255);
+    }
+    100% {
+        border-color: rgb(20, 172, 0);
+        box-shadow: 0px 0px 10px 5px rgb(20, 172, 0);
+    }
+}
+#buttonrem{
+    display: flex;
+    align-items: center;
+    font-size: 16px; /* Powiększenie tekstu */
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    position: relative; top: -35px; left: 30px;
+}
+#buttonrule{
+    display: flex;
+    align-items: center;
+    font-size: 16px; /* Powiększenie tekstu */
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    position: relative; top: 30px; left: 25%;
+}
+/* Ukrywamy domyślny checkbox */
+input[type="checkbox"] {
+    display: none;
+}
+
+/* Styl dla własnego checkboxa */
+.custom-checkbox {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgb(20, 172, 0);
+    border-radius: 5px;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+/* Pseudo-element do zaznaczenia */
+.custom-checkbox::after {
+    content: "✔"; /* Możesz zmienić np. na ikonę */
+    font-size: 20px;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+/* Zmiana stylu po zaznaczeniu */
+input[type="checkbox"]:checked + .custom-checkbox {
+    background-color: rgb(20, 172, 0);
+    border-color: rgb(20, 172, 0);
+}
+
+input[type="checkbox"]:checked + .custom-checkbox::after {
+    display: block;
+}
+
+input:-webkit-autofill {
+    background-color: transparent !important;
+    transition: background-color 5000s ease-in-out 0s;
+    font-size: large !important;
+}
+
+#buttonpass{
+    display: flex;
+    flex-direction: row;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    position: relative; top: -56px; left: 280px;
+}
+.dane{
+    background-color: transparent;
+    outline: none;
+    border: 2px solid rgb(20, 172, 0);
+    border-radius: 50px;
+    width: 75%;
+    height: 50px;
+    margin-bottom: 50px;
+    padding-left: 30px;
+    padding-right: 50px;
+    font-size: large;
+    animation: movingDane 5s infinite linear;
+    color: white;
+}
+
+@keyframes movingDane {
+    0% {
+        border-color: rgb(20, 172, 0);
+    }
+    50% {
+        border-color: rgb(0, 102, 255);
+    }
+    100% {
+        border-color: rgb(20, 172, 0);
+    }
+}
+.dane:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.daner{
+    background-color: transparent;
+    outline: none;
+    border: 2px solid rgb(20, 172, 0);
+    border-radius: 50px;
+    width: 75%;
+    height: 50px;
+    margin-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 50px;
+    font-size: large;
+    color: white;
+    animation: movingDane 5s infinite linear;
+}
+.daner:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+#log{
+    width: 200px;
+    height: 70px;
+    position: relative; top: 150px;
+    font-size: x-large;
+    outline: none;
+    background-color: transparent;
+    transition: 0.5s;
+    animation: movingShadow 5s infinite linear;
+    border-radius: 25px;
+    color: white;
+    font-weight: bold;
+}
+#log:hover{
+    background-color: rgba(20, 20, 20, 0.5);
+    transition: 0.5s;
+    transform: scale(1.1);
+}
+#rejs{
+    width: 200px;
+    height: 70px;
+    position: relative; top: 30px;
+    font-size: x-large;
+    outline: none;
+    background-color: transparent;
+    transition: 0.5s;
+    animation: movingShadow 5s infinite linear;
+    border-radius: 25px;
+    color: white;
+    font-weight: bold;
+}
+#rejs:hover{
+    background-color: rgba(20, 20, 20, 0.5);
+    transition: 0.5s;
+    transform: scale(1.1);
+}
+#reg{
+    width: 25%;
+    height: 600px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid rgb(20, 172, 0);
+    border-radius: 25px;
+    position: absolute; top: 150px; left: 1150px;
+    overflow-x: hidden;
+    animation: movingShadow 5s infinite linear;
+}
+.panele{
+    width: 250px;
+    height: 60px;
+    background-color: rgb(20, 172, 0);
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    display: flex;
+    position: relative; top: -21px;
+    animation: movingPanel 5s infinite linear;
+}
+@keyframes movingPanel {
+    0% {
+        background-color: rgb(20, 172, 0);
+    }
+    50% {
+        background-color: rgb(0, 102, 255);
+    }
+    100% {
+        background-color: rgb(20, 172, 0);
+    }
+}
+#rules {
+    width: 2700px;
+    height: 2300px;
+    background-color: rgb(70, 70, 70);
+    border: 2px solid rgb(20, 172, 0);
+    z-index: 900;
+    position: fixed;
+    left: 44%;
+    top: -500px;
+    border-radius: 47%;
+    transform: rotate(-90deg);
+    transform-origin: center;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px 5px rgb(20, 172, 0);
+    animation: movingShadow 5s infinite linear;
+}
+
+.bubble {
+    position: absolute;
+    bottom: 0px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    animation: floatUp linear infinite;
+}
+
+#switch {
+    position: fixed; left: 58%; top: 45%;
+    min-width: 170px;
+    display: block;
+    z-index: 1000;
+    background: linear-gradient(90deg, rgb(0, 102, 255), rgb(0, 204, 102));
+    background-size: 200% 100%;
+    border: 2px solid rgb(0, 102, 255);
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 15px 20px;
+    border-radius: 25px;
+    text-align: center;
+    cursor: pointer;
+    animation: switchBG 3s infinite linear;
+    transition: 0.2s
+}
+#switch:hover{
+    transform: scale(1.2);
+}
+
+@keyframes switchBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+#news{
+    width: 23%;
+    height: 550px;
+    z-index: 1001;
+    padding: 20px;
+    border-radius: 25px;
+    position: absolute; left: 70%; top: 150px;
+    display: table-column;
+    text-align: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 20px 20px rgba(0, 0, 0, 0.5);
+    color: white;
+}
+#news ul{
+    text-align: left;
+    line-height: 30px;
+}
+#regulamin{
+    width: 23%;
+    height: 550px;
+    z-index: 1001;
+    padding: 20px;
+    border-radius: 25px;
+    position: absolute; left: 1700px; top: 150px;
+    display: table-column;
+    text-align: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 20px 20px rgba(0, 0, 0, 0.5);
+    color: white;
+    opacity: 0;
+}
+#regulamin p{
+    line-height: 40px;
+}
+#regulamin a{
+    color: white;
+    font-weight: bold;
+}
+.error {
+    color: red;
+    font-weight: bold;
+    margin: 10px 0;
+    text-align: center;
+}
+
+
+.toggle_password {
+    position: absolute;
+    right: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 26px;
+    transform: translateY(7px);
+    color: white;
+}
+
+.icons{
+    color: white;
+    transform: translateX(-40px);
+    pointer-events: none;
+}
+.iconsreg{
+    color: white;
+    transform: translateX(-40px);
+    pointer-events: none;
+}
+.regmobile{
+    display: none;
+}
+
+/* Responsywnosc */
+
+@media (max-width: 359px){
+    #news{
+        display: none;
+    }
+    #regulamin{
+        display: none;
+    }
+    #formsy{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .panele{
+        width: 100%;
+        border-radius: 0px;
+    }
+    #rules{
+        display: none;
+    }
+    #switch{
+        display: none;
+    }
+    #panlog{
+        display: flex;
+        margin: 0px;
+        width: 80%;
+        height: 80vh;
+        position: relative; top: 0px; left: 0px;
+        flex-direction: column;
+    }
+    #buttonrem{
+        display: flex;
+        align-items: center;
+        font-size: 16px; /* Powiększenie tekstu */
+        cursor: pointer;
+        color: white;
+        font-weight: bold;
+        position: relative; top: 0px; left: 0px;
+        justify-content: center;
+    }
+    #buttonpass{
+        display: flex;
+        flex-direction: row;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        position: relative; top: 50px; left: 0px;
+        justify-content: center;
+    }
+    #context{
+        display: flex;
+        flex-direction: column;
+        height: 40%;
+    }
+    #regtext{
+        display: flex;
+        flex-direction: column;
+        height: 20%;
+    }
+    .regmobile{
+        display: block;
+        margin-top: auto;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        width: 100%;
+    }
+    .regmobile a{
+        color: white;
+        text-decoration: underline;
+    }
+
+
+    #reg{
+        display: flex;
+        margin: 0px;
+        width: 80%;
+        height: 90vh;
+        position: relative; top: 0px; left: 0px;
+        flex-direction: column;
+        display: none;
+    }
+
+    #log{
+        width: 200px;
+        height: 70px;
+        position: relative; bottom: auto;
+        transform: translateY(-30px);
+        font-size: x-large;
+        outline: none;
+        background-color: transparent;
+        transition: 0.5s;
+        animation: movingShadow 5s infinite linear;
+        border-radius: 25px;
+    }
+    #rejs{
+        width: 200px;
+        height: 70px;
+        position: relative; bottom: auto;
+        transform: translateY(0px);
+        font-size: x-large;
+        outline: none;
+        background-color: transparent;
+        transition: 0.5s;
+        animation: movingShadow 5s infinite linear;
+        border-radius: 25px;
+    }
+
+
+    .toggle_password {
+        position: absolute;
+        right: 10px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 26px;
+        transform: translateY(7px);
+        color: white;
+    }
+    
+    .icons{
+        color: white;
+        pointer-events: none;
+    }
+    .iconsreg{
+        color: white;
+        pointer-events: none;
+    }
+}
+
+@media (min-width: 360px) and (max-width: 480px){
+    #news{
+        display: none;
+    }
+    #regulamin{
+        display: none;
+    }
+    #formsy{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .panele{
+        width: 100%;
+        border-radius: 0px;
+    }
+    #rules{
+        display: none;
+    }
+    #switch{
+        display: none;
+    }
+    #panlog{
+        display: flex;
+        margin: 0px;
+        width: 80%;
+        height: 80vh;
+        position: relative; top: 0px; left: 0px;
+        flex-direction: column;
+    }
+    #buttonrem{
+        display: flex;
+        align-items: center;
+        font-size: 16px; /* Powiększenie tekstu */
+        cursor: pointer;
+        color: white;
+        font-weight: bold;
+        position: relative; top: 0px; left: 0px;
+        justify-content: center;
+    }
+    #buttonpass{
+        display: flex;
+        flex-direction: row;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        position: relative; top: 50px; left: 0px;
+        justify-content: center;
+    }
+    #context{
+        display: flex;
+        flex-direction: column;
+        height: 40%;
+    }
+    #regtext{
+        display: flex;
+        flex-direction: column;
+        height: 20%;
+    }
+    .regmobile{
+        display: block;
+        margin-top: auto;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        width: 100%;
+    }
+    .regmobile a{
+        color: white;
+        text-decoration: underline;
+    }
+
+
+    #reg{
+        display: flex;
+        margin: 0px;
+        width: 80%;
+        height: 90vh;
+        position: relative; top: 0px; left: 0px;
+        flex-direction: column;
+        display: none;
+    }
+
+    #log{
+        width: 200px;
+        height: 70px;
+        position: relative; bottom: auto;
+        transform: translateY(-30px);
+        font-size: x-large;
+        outline: none;
+        background-color: transparent;
+        transition: 0.5s;
+        animation: movingShadow 5s infinite linear;
+        border-radius: 25px;
+    }
+    #rejs{
+        width: 200px;
+        height: 70px;
+        position: relative; bottom: auto;
+        transform: translateY(0px);
+        font-size: x-large;
+        outline: none;
+        background-color: transparent;
+        transition: 0.5s;
+        animation: movingShadow 5s infinite linear;
+        border-radius: 25px;
+    }
+
+
+    .toggle_password {
+        position: absolute;
+        right: 10px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 26px;
+        transform: translateY(7px);
+        color: white;
+    }
+    
+    .icons{
+        color: white;
+        pointer-events: none;
+    }
+    .iconsreg{
+        color: white;
+        pointer-events: none;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 720px){
+    #news{
+        display: none;
+    }
+    #regulamin{
+        display: none;
+    }
+    #formsy{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .panele{
+        width: 100%;
+        border-radius: 0px;
+    }
+    #rules{
+        display: none;
+    }
+    #switch{
+        display: none;
+    }
+    #panlog{
+        display: flex;
+        margin: 0px;
+        width: 80%;
+        height: 80vh;
+        position: relative; top: 0px; left: 0px;
+        flex-direction: column;
+    }
+    #buttonrem{
+        display: flex;
+        align-items: center;
+        font-size: 16px; /* Powiększenie tekstu */
+        cursor: pointer;
+        color: white;
+        font-weight: bold;
+        position: relative; top: 0px; left: 0px;
+        justify-content: center;
+    }
+    #buttonpass{
+        display: flex;
+        flex-direction: row;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        position: relative; top: 50px; left: 0px;
+        justify-content: center;
+    }
+    #context{
+        display: flex;
+        flex-direction: column;
+        height: 40%;
+    }
+    #regtext{
+        display: flex;
+        flex-direction: column;
+        height: 20%;
+    }
+    .regmobile{
+        display: block;
+        margin-top: auto;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        width: 100%;
+    }
+    .regmobile a{
+        color: white;
+        text-decoration: underline;
+    }
+
+
+    #reg{
+        display: flex;
+        margin: 0px;
+        width: 80%;
+        height: 90vh;
+        position: relative; top: 0px; left: 0px;
+        flex-direction: column;
+        display: none;
+    }
+
+    #log{
+        width: 200px;
+        height: 70px;
+        position: relative; bottom: auto;
+        transform: translateY(-30px);
+        font-size: x-large;
+        outline: none;
+        background-color: transparent;
+        transition: 0.5s;
+        animation: movingShadow 5s infinite linear;
+        border-radius: 25px;
+    }
+    #rejs{
+        width: 200px;
+        height: 70px;
+        position: relative; bottom: auto;
+        transform: translateY(0px);
+        font-size: x-large;
+        outline: none;
+        background-color: transparent;
+        transition: 0.5s;
+        animation: movingShadow 5s infinite linear;
+        border-radius: 25px;
+    }
+
+
+    .toggle_password {
+        position: absolute;
+        right: 10px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 26px;
+        transform: translateY(7px);
+        color: white;
+    }
+    
+    .icons{
+        color: white;
+        pointer-events: none;
+    }
+    .iconsreg{
+        color: white;
+        pointer-events: none;
+    }
+}
+
+@media (min-width: 721px) and (max-width: 1024px){
+    #news{
+        display: none;
+    }
+    #regulamin{
+        display: none;
+    }
+    #formsy{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .panele{
+        width: 100%;
+        border-radius: 0px;
+    }
+    #rules{
+        display: none;
+    }
+    #switch{
+        display: none;
+    }
+    #panlog{
+        display: flex;
+        margin: 0px;
+        width: 80%;
+        height: 80vh;
+        position: relative; top: 0px; left: 0px;
+        flex-direction: column;
+    }
+    #buttonrem{
+        display: flex;
+        align-items: center;
+        font-size: 16px; /* Powiększenie tekstu */
+        cursor: pointer;
+        color: white;
+        font-weight: bold;
+        position: relative; top: 0px; left: 0px;
+        justify-content: center;
+    }
+    #buttonpass{
+        display: flex;
+        flex-direction: row;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        position: relative; top: 50px; left: 0px;
+        justify-content: center;
+    }
+    #context{
+        display: flex;
+        flex-direction: column;
+        height: 40%;
+    }
+    #regtext{
+        display: flex;
+        flex-direction: column;
+        height: 20%;
+    }
+    .regmobile{
+        display: block;
+        margin-top: auto;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        width: 100%;
+    }
+    .regmobile a{
+        color: white;
+        text-decoration: underline;
+    }
+
+
+    #reg{
+        display: flex;
+        margin: 0px;
+        width: 80%;
+        height: 90vh;
+        position: relative; top: 0px; left: 0px;
+        flex-direction: column;
+        display: none;
+    }
+
+    #log{
+        width: 200px;
+        height: 70px;
+        position: relative; bottom: auto;
+        transform: translateY(-30px);
+        font-size: x-large;
+        outline: none;
+        background-color: transparent;
+        transition: 0.5s;
+        animation: movingShadow 5s infinite linear;
+        border-radius: 25px;
+    }
+    #rejs{
+        width: 200px;
+        height: 70px;
+        position: relative; bottom: auto;
+        transform: translateY(0px);
+        font-size: x-large;
+        outline: none;
+        background-color: transparent;
+        transition: 0.5s;
+        animation: movingShadow 5s infinite linear;
+        border-radius: 25px;
+    }
+
+
+    .toggle_password {
+        position: absolute;
+        right: 10px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 26px;
+        transform: translateY(7px);
+        color: white;
+    }
+    
+    .icons{
+        color: white;
+        pointer-events: none;
+    }
+    .iconsreg{
+        color: white;
+        pointer-events: none;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1368px){
+    #news{
+        display: none;
+    }
+    #regulamin{
+        display: none;
+    }
+    #formsy{
+        display: flex;
+        justify-content: space-around;
+        height: 100vh;
+    }
+    .panele{
+        width: 100%;
+        border-radius: 0px;
+    }
+    #rules{
+        display: block;
+        height: 2000px;
+        position: fixed;
+        left: 30%;
+        top: -500px;
+    }
+    #panlog{
+        display: flex;
+        margin: 0px;
+        width: 30%;
+        height: 80vh;
+        flex-direction: column;
+        position: absolute; top: 100px;
+    }
+    #buttonrem{
+        display: flex;
+        align-items: center;
+        font-size: 16px; /* Powiększenie tekstu */
+        cursor: pointer;
+        color: white;
+        font-weight: bold;
+        position: relative; top: 0px; left: 0px;
+        justify-content: center;
+    }
+    #buttonpass{
+        display: flex;
+        flex-direction: row;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        position: relative; top: 50px; left: 0px;
+        justify-content: center;
+    }
+    #context{
+        display: flex;
+        flex-direction: column;
+        height: 40%;
+    }
+    #regtext{
+        display: flex;
+        flex-direction: column;
+        height: 20%;
+    }
+    .regmobile{
+        display: none;
+        margin-top: auto;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        width: 100%;
+    }
+    .regmobile a{
+        color: white;
+        text-decoration: underline;
+    }
+
+
+    #reg{
+        display: flex;
+        margin: 0px;
+        width: 30%;
+        height: 80vh;
+        position: absolute; top: 100px; left: 800px;
+        flex-direction: column;
+    }
+
+    #log{
+        width: 200px;
+        height: 70px;
+        position: relative; bottom: auto;
+        transform: translateY(-30px);
+        font-size: x-large;
+        outline: none;
+        background-color: transparent;
+        transition: 0.5s;
+        animation: movingShadow 5s infinite linear;
+        border-radius: 25px;
+    }
+    #rejs{
+        width: 200px;
+        height: 70px;
+        position: relative; bottom: auto;
+        transform: translateY(0px);
+        font-size: x-large;
+        outline: none;
+        background-color: transparent;
+        transition: 0.5s;
+        animation: movingShadow 5s infinite linear;
+        border-radius: 25px;
+    }
+
+
+    .toggle_password {
+        position: absolute;
+        right: 10px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 26px;
+        transform: translateY(7px);
+        color: white;
+    }
+    
+    .icons{
+        color: white;
+        pointer-events: none;
+    }
+    .iconsreg{
+        color: white;
+        pointer-events: none;
+    }
+}
